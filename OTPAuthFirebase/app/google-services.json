@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "914354784914",
+    "firebase_url": "https://otpauth-4bde8.firebaseio.com",
+    "project_id": "otpauth-4bde8",
+    "storage_bucket": "otpauth-4bde8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914354784914:android:baa76a481e6144fd23f44b",
+        "android_client_info": {
+          "package_name": "com.path.otpauthfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914354784914-2dnguigg5q54qke0f85osdkdg4igjgu9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.path.otpauthfirebase",
+            "certificate_hash": "f7ea8621b4a168550817e4ba3a37d7c0c097be37"
+          }
+        },
+        {
+          "client_id": "914354784914-gfe6pjru78gglbmnnvb9t9hveut7otnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHpl-NStrsxbg8RcHdYu17FH7TgXFteKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914354784914-gfe6pjru78gglbmnnvb9t9hveut7otnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
