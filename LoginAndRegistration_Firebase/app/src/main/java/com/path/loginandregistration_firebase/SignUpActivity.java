@@ -16,6 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 
 //https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth/
@@ -80,8 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     progressBar.setVisibility(View.GONE);
                                     if (!task.isSuccessful()) {
-                                        Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
-                                                Toast.LENGTH_SHORT).show();
+                                        showInfoToUser(task);
                                     } else {
                                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                                         finish();
@@ -94,6 +97,22 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void showInfoToUser(Task<AuthResult> task) {
+        //here manage the exceptions and show relevant information to user
+        //hideProgressDialog();
+        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+            Toast.makeText(this, "Email Already Exist", Toast.LENGTH_SHORT).show();
+
+        } else if (task.getException() instanceof FirebaseAuthWeakPasswordException) {
+            Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+        } else if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+            //invalid phone /otp
+            Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     @Override
     protected void onResume() {
