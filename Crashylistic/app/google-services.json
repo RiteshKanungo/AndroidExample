@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "962590591708",
+    "firebase_url": "https://crashyltics.firebaseio.com",
+    "project_id": "crashyltics",
+    "storage_bucket": "crashyltics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962590591708:android:0afde8f6b025e2aa084219",
+        "android_client_info": {
+          "package_name": "com.path.crashylistic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962590591708-lpaph20h1ifdirdjt6stjheb0hp04n2v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.path.crashylistic",
+            "certificate_hash": "f7ea8621b4a168550817e4ba3a37d7c0c097be37"
+          }
+        },
+        {
+          "client_id": "962590591708-g4dferqhco6mo7aomjrskb6umvpio3nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHE9grpYjqycXTJ4vc55YoygMNu4l6oFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962590591708-g4dferqhco6mo7aomjrskb6umvpio3nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
