@@ -1,4 +1,4 @@
-package com.path.googlemaps;
+package com.path.googlemaps.MultipleMarker;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -26,6 +26,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.path.googlemaps.R;
 
 import java.io.IOException;
 import java.util.List;
@@ -157,7 +158,6 @@ public class MainActivity extends AppCompatActivity
         } catch (Exception e) {
             Log.e("Exception", e + "");
         }
-
     }
 
     @Override
@@ -173,6 +173,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onProviderEnabled(String provider) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
 

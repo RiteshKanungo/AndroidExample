@@ -1,4 +1,4 @@
-package com.path.googlemaps;
+package com.path.googlemaps.NearPlacesinfo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.path.googlemaps.NearPlacesinfo.GetNearbyPlacesData;
+import com.path.googlemaps.R;
 
 public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -43,7 +43,6 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
     Location mLastLocation;
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
         return true;
     }
 
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -92,7 +90,8 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
-     */
+     **/
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -112,7 +111,7 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-        Button btnRestaurant = (Button) findViewById(R.id.btnRestaurant);
+        Button btnRestaurant =  findViewById(R.id.btnRestaurant);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             String Restaurant = "restaurant";
             @Override
@@ -130,7 +129,7 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        Button btnHospital = (Button) findViewById(R.id.btnHospital);
+        Button btnHospital =  findViewById(R.id.btnHospital);
         btnHospital.setOnClickListener(new View.OnClickListener() {
             String Hospital = "hospital";
             @Override
@@ -148,7 +147,7 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        Button btnSchool = (Button) findViewById(R.id.btnSchool);
+        Button btnSchool = findViewById(R.id.btnSchool);
         btnSchool.setOnClickListener(new View.OnClickListener() {
             String School = "school";
             @Override
@@ -262,13 +261,11 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
+                // Prompt the user once explanation has been shown
 
-                //Prompt the user once explanation has been shown
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_LOCATION);
-
-
             } else {
                 // No explanation needed, we can request the permission.
                 ActivityCompat.requestPermissions(this,
@@ -276,9 +273,8 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
                         MY_PERMISSIONS_REQUEST_LOCATION);
             }
             return false;
-        } else {
+        } else
             return true;
-        }
     }
 
     @Override
@@ -313,5 +309,9 @@ public class NearByPlaces extends FragmentActivity implements OnMapReadyCallback
             // other 'case' lines to check for other permissions this app might request.
             // You can add here other case statements according to your requirement.
         }
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

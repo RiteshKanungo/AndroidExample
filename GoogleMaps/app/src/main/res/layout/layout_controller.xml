@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_current_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Location" />
+
+    <Button
+        android:id="@+id/btn_nearByPlaces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Near By Places" />
+
+    <Button
+        android:id="@+id/btn_Animate_marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Animate Marker" />
+
+    <Button
+        android:id="@+id/btn_moving_marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Moving Marker" />
+
+</LinearLayout>
